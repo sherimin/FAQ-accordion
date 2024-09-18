@@ -1,0 +1,167 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+    --work-sans: "Work Sans", sans-serif;
+}
+
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: var(--light-pink);
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12rem auto 6rem auto;
+}
+
+.image-container {
+    width: 100vw;
+}
+
+.background-image-desktop {
+    z-index: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.background-image-mobile {
+    display: none;
+}
+
+.title-container {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.icon-star {
+    margin-right: 20px;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 37.5rem;
+    height: auto;
+    z-index: 10;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 40px 40px 10px 40px;
+    box-shadow: 0px 20px 25px -5px rgba(234, 218, 244, 0.8);
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+.question-container {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.question {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 30px 0 20px 0;
+    color: var(--dark-purple);
+}
+
+.question:hover {
+    color: rgb(168, 36, 241);
+}
+
+.toggleImage {
+    padding-left: 10px;
+    max-width: 40px;
+}
+
+.answer {
+    font-weight: 400;
+    color: var(--grayish-purple);
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.75s ease-in-out;
+}
+
+.answer.open {
+    max-height: 500px;
+}
+
+hr {
+    border-top: 1px solid var(--light-pink);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+@media (max-width: 600px) {
+    main {
+        position: relative;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .background-image-mobile {
+        z-index: 0;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: auto;
+        display: block;
+    }
+    
+    .image-container {
+        margin: 0;
+        width: 100vw;
+    }
+
+    .background-image-desktop {
+        display: none;
+    }
+
+    .title-container {
+        margin-bottom: 0;
+    }
+
+    h1 {
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    .faq-container {
+        margin: 100px 30px 45px 30px;
+        z-index: 10;
+        position: relative;
+    }
+
+    .question {
+        padding: 15px 0 15px 0;
+        margin-right: 3px;
+        margin-top: 10px;
+    }
+
+    .answer {
+        font-size: 14px;
+    }
+}
